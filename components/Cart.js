@@ -13,9 +13,9 @@ export default function Cart({ cart }) {
   const { cartOpen, setCartOpen, checkoutUrl, removeCartItem } = useContext(CartContext)
 
   let cartTotal = 0
-  cart.map(item => {
-    cartTotal += item?.variantPrice * item?.variantQuantity
-  })
+  // cart.map(item => {
+  //   cartTotal += item?.variantPrice * item?.variantQuantity
+  // })
 
   return (
     <Transition.Root show={cartOpen} as={Fragment}>
@@ -91,7 +91,7 @@ export default function Cart({ cart }) {
                                             <a onClick={() => setCartOpen(false)}>{product.title}</a>
                                           </Link>
                                         </h3>
-                                        <p className="ml-4">{formatter.format(product.variantPrice)}</p>
+                                        {/* <p className="ml-4">{formatter.format(product.variantPrice)}</p> */}
                                       </div>
                                       <p className="mt-1 text-sm text-gray-500">{product.variantTitle}</p>
                                     </div>
